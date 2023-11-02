@@ -11,19 +11,29 @@ class GrandientContainer extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: colors,
-          begin: beginAlignment,
-          end: endAlignment,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: colors,
+            begin: beginAlignment,
+            end: endAlignment,
+          ),
         ),
-      ),
-      child: Center(
-        child: Image.asset(
-          'assets/images/dice-3.png',
-          width: 200,
-        ),
-      ),
-    );
+        child: Center(
+          child: Column(
+            children: [
+              Image.asset(
+                'assets/images/dice-3.png',
+                width: 200,
+              ),
+              OutlinedButton(
+                  onPressed: diceRoll, child: const Text("Roll Dice")),
+            ],
+          ),
+        ));
+  }
+
+  // Roll dice function
+  void diceRoll() {
+    print("Dice roll pressed!");
   }
 }
