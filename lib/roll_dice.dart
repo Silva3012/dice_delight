@@ -1,4 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+
+// Declare randomNumber globally so that it is created once
+final randomNumber = Random();
 
 class RollDice extends StatefulWidget {
   const RollDice({super.key});
@@ -10,12 +15,12 @@ class RollDice extends StatefulWidget {
 }
 
 class _RollDiceState extends State<RollDice> {
-  var activeDice = 'assets/images/dice-3.png';
+  var currentDice = 1;
 
   // Roll dice function
   void diceRoll() {
     setState(() {
-      activeDice = 'assets/images/dice-6.png';
+      currentDice = randomNumber.nextInt(6) + 1;
     });
   }
 
@@ -25,7 +30,7 @@ class _RollDiceState extends State<RollDice> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Image.asset(
-          activeDice,
+          'assets/images/dice-$currentDice.png',
           width: 200,
         ),
         const SizedBox(
