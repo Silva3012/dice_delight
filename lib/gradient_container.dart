@@ -1,4 +1,4 @@
-import 'package:dice_delight/styled_text.dart';
+import 'package:dice_delight/roll_dice.dart';
 import 'package:flutter/material.dart';
 
 const beginAlignment = Alignment.topCenter;
@@ -19,30 +19,8 @@ class GrandientContainer extends StatelessWidget {
             end: endAlignment,
           ),
         ),
-        child: Center(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Image.asset(
-                'assets/images/dice-3.png',
-                width: 200,
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              OutlinedButton(
-                  onPressed: diceRoll,
-                  style: OutlinedButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      textStyle: const TextStyle(fontSize: 28)),
-                  child: const Text("Roll Dice")),
-            ],
-          ),
+        child: const Center(
+          child: RollDice(),
         ));
-  }
-
-  // Roll dice function
-  void diceRoll() {
-    print("Dice roll pressed!");
   }
 }
