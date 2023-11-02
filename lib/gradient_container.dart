@@ -1,5 +1,5 @@
+import 'package:dice_delight/roll_dice.dart';
 import 'package:flutter/material.dart';
-import 'package:dice_delight/styled_text.dart';
 
 const beginAlignment = Alignment.topCenter;
 const endAlignment = Alignment.bottomCenter;
@@ -12,16 +12,15 @@ class GrandientContainer extends StatelessWidget {
   @override
   Widget build(context) {
     return Container(
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: colors,
-          begin: beginAlignment,
-          end: endAlignment,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors: colors,
+            begin: beginAlignment,
+            end: endAlignment,
+          ),
         ),
-      ),
-      child: const Center(
-        child: StyledText("Hello Silva's World!"),
-      ),
-    );
+        child: const Center(
+          child: RollDice(),
+        ));
   }
 }
