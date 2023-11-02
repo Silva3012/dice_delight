@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:dice_delight/styled_text.dart';
 
 const beginAlignment = Alignment.topCenter;
 const endAlignment = Alignment.bottomCenter;
@@ -19,8 +18,11 @@ class GrandientContainer extends StatelessWidget {
           end: endAlignment,
         ),
       ),
-      child: const Center(
-        child: StyledText("Hello Silva's World!"),
+      child: Center(
+        child: Image.asset(
+          'assets/images/dice-3.png',
+          width: 200,
+        ),
       ),
     );
   }
